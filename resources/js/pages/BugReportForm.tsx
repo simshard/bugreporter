@@ -45,8 +45,9 @@ const BugReportForm: React.FC = () => {
    return (
 
     <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-white rounded shadow">
-     <h1 className="text-2xl font-semibold text-gray-600 mb-4">
-        <FaBug className="w-5 h-5" />Bug Reporter</h1>
+     <h1 className="inline-flex items-center gap-2 text-2xl font-semibold text-gray-600 mb-4">
+        <FaBug className="w-5 h-5" />Bug Reporter
+     </h1>
      <div className="mb-4">
         <label className="block mb-1 text-gray-600 font-semibold">Title</label>
         <input
