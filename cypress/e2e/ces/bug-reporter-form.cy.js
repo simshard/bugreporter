@@ -1,3 +1,4 @@
+/* global describe, it, cy, beforeEach */
 describe('Bug Report Form', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8000/bug-reporter');
