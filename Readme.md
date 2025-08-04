@@ -12,7 +12,8 @@ Clone the repository or download the zip archive and unpack it.
 
 # How to run the frontend
 
- in the terminal run `
+ in the terminal run the command 
+ `npx cypress open`
 
 # How to run the tests
 Choose your preferred browser for E2E testing and run the spec `bug-reporter-form.cy.js`
