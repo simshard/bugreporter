@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { FaBug } from 'react-icons/fa';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 interface BugReportFormState {
   title: string;
@@ -35,10 +35,11 @@ const BugReportForm: React.FC = () => {
       await axios.post('/api/bug-reports', form);
       setSuccess('Bug reported!');
       setForm({ title: '', description: '', severity: 'medium' });
-    } catch (err: any) {
-      if (err.response?.data?.errors) {
-        setErrors(err.response.data.errors);
-      }
+    } catch (err) {
+        const axiosError = err as AxiosError<{ errors?: Record<string, string> }>;
+        if (axiosError.response?.data?.errors) {
+          setErrors(axiosError.response.data.errors);
+        }
     }
   };
 
