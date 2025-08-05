@@ -14,11 +14,11 @@ Clone the repository or download the zip archive and unpack it.
     `npm install`
  - To create the .env file, run the following command
     `cp .env.example .env`
- - To create the required database file run this command
-    `touch ./database/database.sqlite`
  - To generate an application key, run this command
     `php artisan key:generate`
- - To create the  database tables run this command
+ - To create the required database file run this command
+    `touch ./database/database.sqlite`
+ - To create the database tables run this command
     `php artisan migrate`
  - Start the webserver and Vite    
     `composer run dev`
