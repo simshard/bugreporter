@@ -2,17 +2,17 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { FaBug } from 'react-icons/fa';
 import axios, { AxiosError } from 'axios';
 
-interface BugReportFormState {
+type BugReportFields = {
   title: string;
   description: string;
   severity: 'low' | 'medium' | 'high';
-}
+};
 
-interface ValidationErrors {
-  title?: string[];
-  description?: string[];
-  severity?: string[];
-}
+type ValidationErrors = {
+  [K in keyof BugReportFields]?: string[];
+};
+
+type BugReportFormState = BugReportFields;
 
 const BugReportForm: React.FC = () => {
   const [form, setForm] = useState<BugReportFormState>({
