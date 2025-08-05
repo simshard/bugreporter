@@ -93,5 +93,3 @@ const BugReportForm: React.FC = () => {
 };
 
 export default BugReportForm;
-// This code defines a React component for a bug report form.
-//  It includes state management for form

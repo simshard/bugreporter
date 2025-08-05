@@ -32,14 +32,13 @@ describe('Bug Report Form', () => {
   });
 
   it('shows backend validation error', () => {
-    // Simulate backend error by intercepting the request
     cy.intercept('POST', '/api/bug-reports', {
       statusCode: 422,
       body: {
         errors: { title: ['The title field is required.'] }
       }
     }).as('postBugReport');
-        cy.get('button[type="submit"]').click();
+    cy.get('button[type="submit"]').click();
     cy.wait('@postBugReport');
     cy.contains('The title field is required').should('exist');
   });
